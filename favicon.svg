@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Dark background -->
+  <rect width="32" height="32" fill="#06060A"/>
+  
+  <!-- Outer frame -->
+  <rect x="1" y="1" width="30" height="30" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="0.8"/>
+  
+  <!-- Corner ticks -->
+  <line x1="1" y1="5" x2="4" y2="5" stroke="#C8A96E" stroke-width="0.8"/>
+  <line x1="28" y1="5" x2="31" y2="5" stroke="#C8A96E" stroke-width="0.8"/>
+  <line x1="1" y1="27" x2="4" y2="27" stroke="#C8A96E" stroke-width="0.8"/>
+  <line x1="28" y1="27" x2="31" y2="27" stroke="#C8A96E" stroke-width="0.8"/>
+  
+  <!-- P letter -->
+  <path d="M7 23V9h6c2.5 0 3.8 1.4 3.8 3.6S15.5 16 13 16H9.5v7H7z" fill="none" stroke="#C8A96E" stroke-width="1.1" stroke-linejoin="round"/>
+  
+  <!-- W letter -->
+  <path d="M16 23l2-6 2.5 4.5 2.5-4.5 2 6" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="0.9" stroke-linejoin="round"/>
+</svg>
