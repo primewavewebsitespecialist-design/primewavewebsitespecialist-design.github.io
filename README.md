@@ -1,1 +1,1 @@
-# primewavewebsitespecialist-design.github.io
+# primewave.github.io
