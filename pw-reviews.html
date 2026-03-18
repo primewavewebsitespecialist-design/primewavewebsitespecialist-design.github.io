@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --void:#06060A;
+  --deep:#0E0E14;
+  --card:#141419;
+  --gold:#C8A96E;
+  --gold2:#E2C88A;
+  --gold-b:rgba(200,169,110,.08);
+  --gold-c:rgba(200,169,110,.22);
+  --ink:#F2EDE4;
+  --ink2:rgba(242,237,228,.5);
+  --ink3:rgba(242,237,228,.12);
+  --ink4:rgba(242,237,228,.05);
+}
+html,body{width:100%;margin:0;padding:0;background:var(--deep);color:var(--ink);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,rgba(200,169,110,.22),transparent)}
+
+section{padding:7rem 5vw 8rem;position:relative;overflow:hidden}
+
+/* Grain */
+section::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");background-size:200px;opacity:.03;pointer-events:none;z-index:0;mix-blend-mode:overlay}
+
+.wrap{max-width:1300px;margin:0 auto;position:relative;z-index:1}
+
+/* HEADER */
+.header{display:grid;grid-template-columns:1fr auto;align-items:end;margin-bottom:4rem;gap:2rem}
+.label{display:flex;align-items:center;gap:.8rem;font-family:'Outfit',sans-serif;font-size:.54rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:400}
+.label::before{content:'';display:block;width:18px;height:1px;background:var(--gold)}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.5vw,4.5rem);font-weight:300;line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.h2 em{font-style:italic;color:var(--gold2)}
+
+/* Google badge */
+.g-badge{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;border:1px solid var(--gold-b);background:var(--ink4)}
+.g-logo{display:flex;align-items:center;gap:.5rem}
+.g-logo svg{width:60px}
+.g-score{text-align:right}
+.g-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1;letter-spacing:-.04em}
+.g-stars{display:flex;gap:2px;justify-content:flex-end;margin:.2rem 0}
+.g-star{color:#FBBC04;font-size:.9rem}
+.g-count{font-family:'Outfit',sans-serif;font-size:.52rem;letter-spacing:.15em;color:var(--ink2);font-weight:300}
+
+/* CAROUSEL */
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:1px;overflow:hidden;background:var(--ink3)}
+.track{display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+
+/* REVIEW CARD */
+.rcard{min-width:calc(33.333% - 1px);background:var(--deep);padding:2.8rem 2.5rem;position:relative;overflow:hidden;flex-shrink:0;transition:background .4s}
+.rcard::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .5s cubic-bezier(.16,1,.3,1)}
+.rcard:hover::before{width:100%}
+.rcard:hover{background:rgba(200,169,110,.05)}
+
+/* Quote mark */
+.quote-mark{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(200,169,110,.12);line-height:.7;margin-bottom:1rem;display:block}
+
+/* Stars */
+.stars{display:flex;gap:3px;margin-bottom:1.2rem}
+.star{color:#FBBC04;font-size:.85rem}
+.star.empty{color:rgba(242,237,228,.15)}
+
+/* Review text */
+.r-text{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:300;font-style:italic;line-height:1.65;color:var(--ink2);margin-bottom:2rem}
+
+/* Client info */
+.r-client{display:flex;align-items:center;gap:.9rem;padding-top:1.5rem;border-top:1px solid var(--ink3)}
+.r-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),rgba(200,169,110,.3));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--void);flex-shrink:0}
+.r-info{}
+.r-name{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:500;color:var(--ink);letter-spacing:.04em}
+.r-site{font-family:'Outfit',sans-serif;font-size:.55rem;font-weight:300;color:var(--gold);letter-spacing:.1em;margin-top:.15rem}
+.r-date{font-family:'Outfit',sans-serif;font-size:.5rem;font-weight:300;color:rgba(242,237,228,.22);letter-spacing:.1em;margin-top:.1rem}
+
+/* Google icon on card */
+.r-google{position:absolute;top:1.8rem;right:1.8rem;opacity:.15}
+.r-google svg{width:18px;height:18px}
+
+/* CONTROLS */
+.controls{display:flex;align-items:center;justify-content:space-between;margin-top:2.5rem}
+.dots{display:flex;gap:.5rem}
+.dot{width:24px;height:2px;background:var(--ink3);cursor:pointer;transition:all .3s}
+.dot.active{background:var(--gold);width:40px}
+.arrows{display:flex;gap:.8rem}
+.arr-btn{width:44px;height:44px;border:1px solid var(--ink3);background:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink2);font-size:.9rem;transition:all .35s}
+.arr-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* CTA */
+.review-cta{margin-top:3.5rem;display:flex;align-items:center;justify-content:space-between;padding:2rem 2.5rem;border:1px solid var(--gold-b);background:var(--ink4)}
+.rc-left{}
+.rc-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:.3rem}
+.rc-sub{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:300;color:var(--ink2);letter-spacing:.04em}
+.btn-g{display:inline-flex;align-items:center;gap:.65rem;padding:.78rem 1.8rem;background:var(--gold);color:var(--void);font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;position:relative;overflow:hidden;white-space:nowrap}
+.btn-g::before{content:'';position:absolute;inset:0;background:var(--gold2);transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.btn-g:hover::before{transform:scaleX(1);transform-origin:left}
+.btn-g span{position:relative;z-index:1}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media(max-width:900px){
+  .rcard{min-width:calc(50% - 1px)}
+  .header{grid-template-columns:1fr}
+  .g-badge{justify-content:flex-start}
+  .review-cta{flex-direction:column;gap:1.5rem;align-items:flex-start}
+}
+@media(max-width:600px){
+  .rcard{min-width:100%}
+}
+</style>
+</head>
+<body>
+<section>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <div class="header rv">
+      <div>
+        <div class="label">Google Reviews</div>
+        <h2 class="h2">What Clients <em>Say.</em></h2>
+      </div>
+      <!-- Google Rating Badge -->
+      <div class="g-badge">
+        <div class="g-logo">
+          <svg viewBox="0 0 74 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text y="18" font-family="Arial,sans-serif" font-size="16" font-weight="700">
+              <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC04">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+            </text>
+          </svg>
+        </div>
+        <div class="g-score">
+          <div class="g-num">5.0</div>
+          <div class="g-stars">
+            <span class="g-star">★</span><span class="g-star">★</span><span class="g-star">★</span><span class="g-star">★</span><span class="g-star">★</span>
+          </div>
+          <div class="g-count">Based on Google Reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="carousel-wrap rv d1">
+      <div class="carousel">
+        <div class="track" id="track">
+
+          <!-- REVIEW 1 -->
+          <div class="rcard">
+            <div class="r-google"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+            <span class="quote-mark">"</span>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="r-text">Prime Wave redesigned our entire site and the results were immediate. We saw a 40% increase in organic traffic within the first month. Absolutely outstanding work.</p>
+            <div class="r-client">
+              <div class="r-avatar">L</div>
+              <div class="r-info">
+                <div class="r-name">Licence Appeal</div>
+                <div class="r-site">licenceappeal.com.au · Australia</div>
+                <div class="r-date">2 months ago</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVIEW 2 -->
+          <div class="rcard">
+            <div class="r-google"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+            <span class="quote-mark">"</span>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="r-text">Incredibly professional team. They understood our brand from day one and delivered a website that perfectly represents Furniture Culture. Highly recommend.</p>
+            <div class="r-client">
+              <div class="r-avatar">F</div>
+              <div class="r-info">
+                <div class="r-name">Furniture Culture</div>
+                <div class="r-site">furnitureculture.com.sg · Singapore</div>
+                <div class="r-date">3 months ago</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVIEW 3 -->
+          <div class="rcard">
+            <div class="r-google"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+            <span class="quote-mark">"</span>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="r-text">The technical SEO work Prime Wave did on our site was game-changing. Faster load times, better rankings and more leads. Cannot recommend them enough.</p>
+            <div class="r-client">
+              <div class="r-avatar">A</div>
+              <div class="r-info">
+                <div class="r-name">A+ Choice Construction</div>
+                <div class="r-site">apluschoiceconstruction.com · USA</div>
+                <div class="r-date">1 month ago</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVIEW 4 -->
+          <div class="rcard">
+            <div class="r-google"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+            <span class="quote-mark">"</span>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="r-text">Fast delivery, premium quality and zero back and forth. Prime Wave understood exactly what we needed and delivered beyond expectations. Will work with them again.</p>
+            <div class="r-client">
+              <div class="r-avatar">P</div>
+              <div class="r-info">
+                <div class="r-name">Pet Mood Care</div>
+                <div class="r-site">petmood.care · USA</div>
+                <div class="r-date">5 months ago</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVIEW 5 -->
+          <div class="rcard">
+            <div class="r-google"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+            <span class="quote-mark">"</span>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="r-text">Our website went from embarrassing to something we are genuinely proud of. The team at Prime Wave brought ideas we never even thought of. Exceptional service.</p>
+            <div class="r-client">
+              <div class="r-avatar">S</div>
+              <div class="r-info">
+                <div class="r-name">Solomon's St Helena</div>
+                <div class="r-site">solomons-sthelena.com · St Helena</div>
+                <div class="r-date">4 months ago</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVIEW 6 -->
+          <div class="rcard">
+            <div class="r-google"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
+            <span class="quote-mark">"</span>
+            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="r-text">Responsive, professional and talented. Prime Wave fixed issues on our site that three other developers couldn't solve. They are now our go-to web team permanently.</p>
+            <div class="r-client">
+              <div class="r-avatar">T</div>
+              <div class="r-info">
+                <div class="r-name">Tite Global</div>
+                <div class="r-site">titeglobal.com · Global</div>
+                <div class="r-date">6 months ago</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end track -->
+      </div><!-- end carousel -->
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <div class="dots" id="dots"></div>
+        <div class="arrows">
+          <button class="arr-btn" id="prev" aria-label="Previous">←</button>
+          <button class="arr-btn" id="next" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="review-cta rv d2">
+      <div class="rc-left">
+        <div class="rc-title">Happy with our work? Leave us a review.</div>
+        <div class="rc-sub">It takes 30 seconds and helps other businesses find us on Google.</div>
+      </div>
+      <a href="https://g.page/r/YOUR-GOOGLE-REVIEW-LINK/review" target="_blank" class="btn-g">
+        <span>Leave a Google Review</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const track = document.getElementById('track');
+const dotsWrap = document.getElementById('dots');
+const cards = track.querySelectorAll('.rcard');
+let perView = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
+const total = Math.ceil(cards.length / perView);
+let cur = 0;
+
+// Build dots
+for(let i=0;i<total;i++){
+  const d = document.createElement('div');
+  d.className = 'dot' + (i===0?' active':'');
+  d.addEventListener('click',()=>goTo(i));
+  dotsWrap.appendChild(d);
+}
+
+function goTo(n){
+  cur = Math.max(0, Math.min(n, total-1));
+  track.style.transform = `translateX(-${cur * (100/perView) * perView}%)`;
+  dotsWrap.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+}
+
+document.getElementById('prev').addEventListener('click',()=>goTo(cur-1));
+document.getElementById('next').addEventListener('click',()=>goTo(cur+1));
+
+// Auto play
+setInterval(()=>goTo(cur >= total-1 ? 0 : cur+1), 5000);
+
+// Reveal
+const ro = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.07});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// Resize
+window.addEventListener('resize',()=>{
+  perView = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
+  goTo(0);
+});
+</script>
+</body>
+</html>
