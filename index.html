@@ -803,12 +803,8 @@ var TEAM=[
      +'<div class="tmsoc"><a href="https://wa.me/12268556194" target="_blank" class="tms">W</a><a href="https://www.instagram.com/primewave301" target="_blank" class="tms">IG</a></div>'
      +'</div>'
      +'</div></article>';
- document.getElementById("tmgrid").innerHTML=h;
-  setTimeout(function(){
-    document.querySelectorAll("#tmgrid .rv").forEach(function(el){
-      el.classList.add("in");
-    });
-  },100);
+document.getElementById("tmgrid").innerHTML=h;
+  setTimeout(function(){initReveal();},200);
 })();
 
 /* ====== PORTFOLIO ====== */
@@ -1011,7 +1007,10 @@ if(statSec)statObs.observe(statSec);
 var rvo=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in");});
 },{threshold:0.07});
-document.querySelectorAll(".rv").forEach(function(el){rvo.observe(el);});
+function initReveal(){
+  document.querySelectorAll(".rv").forEach(function(el){rvo.observe(el);});
+}
+initReveal();
 
 /* ====== FAQ ====== */
 function tfaq(el){
