@@ -804,7 +804,6 @@ var TEAM=[
      +'</div>'
      +'</div></article>';
 document.getElementById("tmgrid").innerHTML=h;
-  setTimeout(function(){initReveal();},200);
 })();
 
 /* ====== PORTFOLIO ====== */
@@ -1004,13 +1003,7 @@ var statSec=document.getElementById("stats");
 if(statSec)statObs.observe(statSec);
 
 /* ====== SCROLL REVEAL ====== */
-var rvo=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in");});
-},{threshold:0.07});
-function initReveal(){
-  document.querySelectorAll(".rv").forEach(function(el){rvo.observe(el);});
-}
-initReveal();
+document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});
 
 /* ====== FAQ ====== */
 function tfaq(el){
