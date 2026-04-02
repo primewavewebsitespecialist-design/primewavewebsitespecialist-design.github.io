@@ -17,8 +17,6 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Prime Wave Agency","description":"Premium web design and development agency based in Canada.","url":"https://primewaveagency.org/","telephone":"+12268556194","email":"primewave.agency1@gmail.com","address":{"@type":"PostalAddress","addressCountry":"CA"},"priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 :root{
@@ -54,19 +52,30 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .bb:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(26,77,214,.5)}
 .bg-btn{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#9A7A20,var(--gold));border:none;border-radius:3px;color:#fff;font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:16px 36px;min-height:50px;white-space:nowrap;transition:transform .25s,box-shadow .3s;cursor:pointer;text-decoration:none}
 .bg-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(201,169,110,.45)}
-
-  
 .bo{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1.5px solid rgba(255,255,255,.45);border-radius:3px;color:#fff;font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:16px 36px;min-height:50px;white-space:nowrap;transition:all .3s;text-decoration:none}
 .bo:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.08)}
 .bs{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(201,169,110,.3);border-radius:2px;color:rgba(201,169,110,.85);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:12px 24px;transition:all .3s;text-decoration:none;white-space:nowrap}
 .bs:hover{border-color:var(--gold);color:var(--gold)}
 
+/* PROMO BANNER */
+#promo-banner{position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#1A4DD6,#C9A96E);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+#promo-banner p{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin:0}
+#promo-banner strong{color:#fff;font-size:14px}
+.countdown-wrap{display:flex;align-items:center;gap:8px}
+.cd-block{background:rgba(0,0,0,.25);border-radius:4px;padding:4px 10px;text-align:center;min-width:44px}
+.cd-num{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;color:#fff;line-height:1}
+.cd-lbl{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.cd-sep{font-size:18px;font-weight:700;color:rgba(255,255,255,.6)}
+#promo-close{background:none;border:none;color:rgba(255,255,255,.7);font-size:18px;cursor:pointer;padding:0 0 0 10px;line-height:1;transition:color .2s}
+#promo-close:hover{color:#fff}
+
 /* NAV */
 #nav{position:fixed;top:48px;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 40px;background:transparent;border-bottom:1px solid transparent;transition:all .4s}
 #nav.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom-color:rgba(0,0,0,.07);box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.nav-logo{display:flex;align-items:center;text-decoration:none}
-.nav-logo-text{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:1px;transition:color .3s;white-space:nowrap}
-#nav.solid .nav-logo-text{color:var(--td)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:38px;width:auto;object-fit:contain}
+.nav-logo-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:1px;transition:color .3s}
+#nav.solid .nav-logo-name{color:var(--td)}
 .nl{display:flex;align-items:center;gap:14px;list-style:none}
 .nl a{font-size:10px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.85);position:relative;padding-bottom:3px;transition:color .25s}
 .nl a::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s;transform-origin:left}
@@ -128,9 +137,7 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .sc{padding:52px 40px;border-right:1px solid rgba(201,169,110,.12);position:relative;overflow:hidden;transition:background .3s,transform .3s}
 .sc:last-child{border-right:none}
 .sc:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
-.sc:hover .sn{color:var(--gold2)}
-.sc:hover .sl{color:rgba(255,255,255,.9)}
-.sc:hover .ss{color:rgba(200,196,190,.8)}
+.sc:hover .sn{color:var(--gold2)}.sc:hover .sl{color:rgba(255,255,255,.9)}.sc:hover .ss{color:rgba(200,196,190,.8)}
 .sca{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue2),var(--gold));transform:scaleX(0);transition:transform .45s;transform-origin:left}
 .sc:hover .sca{transform:scaleX(1)}
 .sn{font-family:"Cormorant Garamond",serif;font-size:60px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:6px;transition:color .3s}
@@ -155,6 +162,20 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .abv-ico{font-size:22px;margin-bottom:8px}
 .abv-ti{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:var(--td);margin-bottom:5px}
 .abv-de{font-size:12px;color:var(--tmu);line-height:1.6}
+
+/* WHY CHOOSE US — replaces team */
+#whychoose{padding:110px 0;background:linear-gradient(160deg,#06060E 0%,#0C0C1A 40%,#06060E 100%);position:relative}
+#whychoose::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 100% 0%,rgba(52,116,245,.09),transparent 55%),radial-gradient(ellipse 40% 40% at 0% 100%,rgba(201,169,110,.07),transparent 50%)}
+.wc-z{position:relative;z-index:1}
+.wc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.wc-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,110,.15);border-radius:8px;padding:32px 28px;position:relative;overflow:hidden;transition:all .4s;cursor:default}
+.wc-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue2),var(--gold));transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.wc-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-8px);box-shadow:0 24px 56px rgba(0,0,0,.4);background:rgba(255,255,255,.07)}
+.wc-card:hover::before{transform:scaleX(1)}
+.wc-ico{font-size:32px;margin-bottom:16px;display:block}
+.wc-title{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:10px;transition:color .3s}
+.wc-card:hover .wc-title{color:var(--gold)}
+.wc-desc{font-size:13px;color:rgba(200,196,190,.7);line-height:1.75}
 
 /* SERVICES */
 #services{padding:110px 0;background:linear-gradient(135deg,#06060e 0%,#0c0c1a 60%,#06060e 100%)}
@@ -188,33 +209,6 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .orc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;background:rgba(52,116,245,.12);border:1px solid rgba(52,116,245,.3);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .orc-txt{font-family:"Cormorant Garamond",serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1px;text-align:center;line-height:1.3}
 @keyframes ospin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-
-/* TEAM */
-#team{padding:110px 0;background:linear-gradient(160deg,#06060E 0%,#0C0C1A 40%,#06060E 100%);position:relative;overflow:visible}
-#team::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 100% 0%,rgba(52,116,245,.09),transparent 55%),radial-gradient(ellipse 40% 40% at 0% 100%,rgba(201,169,110,.07),transparent 50%)}
-.tmz{position:relative;z-index:1}
-.tmhd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px}
-.tmgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;grid-auto-rows:auto}
-.tm{background:rgba(15,15,30,.7);border:1px solid rgba(201,169,110,.14);border-radius:6px;overflow:hidden;backdrop-filter:blur(8px);transition:border-color .4s,transform .4s,box-shadow .4s}
-.tm:hover{border-color:rgba(201,169,110,.5);transform:translateY(-10px);box-shadow:0 28px 64px rgba(0,0,0,.5)}
-.tmimg{position:relative;height:260px;overflow:hidden;background:linear-gradient(135deg,rgba(26,77,214,.2),rgba(201,169,110,.12))}
-.tminit{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-size:56px;font-weight:700;color:rgba(201,169,110,.45);transition:color .4s}
-.tm:hover .tminit{color:rgba(201,169,110,.15)}
-.tmfade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(6,6,14,.95) 100%);transition:opacity .4s}
-.tm:hover .tmfade{opacity:0}
-.tmbadge{position:absolute;top:10px;right:10px;background:rgba(201,169,110,.15);border:1px solid rgba(201,169,110,.3);border-radius:2px;padding:2px 9px;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);backdrop-filter:blur(8px)}
-.tmov{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;transition:transform .4s,opacity .4s}
-.tm:hover .tmov{transform:translateY(8px);opacity:0}
-.tmn{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:2px}
-.tmr{font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
-.tm-hover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,14,.88) 0%,rgba(6,6,14,.97) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .4s;text-align:center}
-.tm:hover .tm-hover-overlay{opacity:1}
-.tm-hover-name{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
-.tm-hover-role{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.tm-hover-bio{font-size:12px;color:rgba(200,196,190,.8);line-height:1.6;margin-bottom:16px}
-.tmsoc{display:flex;gap:8px;justify-content:center}
-.tms{width:30px;height:30px;border:1px solid rgba(201,169,110,.3);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:rgba(200,196,190,.7);transition:all .3s;text-decoration:none}
-.tms:hover{border-color:var(--blue2);color:var(--blue2);background:rgba(52,116,245,.1)}
 
 /* PROCESS */
 #process{padding:110px 0;background:linear-gradient(180deg,#06060E 0%,#0d0d1e 100%);position:relative}
@@ -262,7 +256,7 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .pgo{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue2);text-decoration:none;transition:color .3s,gap .3s}
 .pgo:hover{color:var(--gold);gap:8px}
 
-/* REVIEWS SLIDESHOW */
+/* REVIEWS */
 #reviews{padding:110px 0 120px;background:linear-gradient(160deg,#06060E 0%,#0C0C1A 50%,#06060E 100%);position:relative;overflow:hidden}
 #reviews::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold) 40%,var(--blue2) 60%,transparent)}
 .rv-z{position:relative;z-index:1}
@@ -276,8 +270,6 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .g-stars{display:flex;gap:2px;justify-content:flex-end;margin:.2rem 0}
 .g-star{color:#FBBC04;font-size:.9rem}
 .g-count{font-size:.55rem;letter-spacing:.15em;color:rgba(200,196,190,.6);font-weight:300}
-
-/* SLIDESHOW */
 .slideshow-wrap{position:relative;overflow:hidden}
 .slides-track{display:flex;transition:transform .65s cubic-bezier(.16,1,.3,1)}
 .slide{min-width:100%;padding:0 4px}
@@ -345,23 +337,24 @@ button{cursor:pointer;font-family:"DM Sans",sans-serif}
 .civl a:hover{color:var(--gold)}
 .cform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:44px;position:relative;overflow:hidden;backdrop-filter:blur(8px);border-radius:4px}
 .cform::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--gold))}
-.cfti{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:28px}
-.cr2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cf{margin-bottom:16px}
+.cfti{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:8px}
+.cf-note-top{font-size:13px;color:rgba(200,196,190,.55);margin-bottom:24px}
+.cf{margin-bottom:14px}
 .cf label{display:block;font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
 .cf input,.cf textarea,.cf select{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:2px;padding:12px 14px;color:#fff;font-family:"DM Sans",sans-serif;font-size:14px;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;-webkit-appearance:none}
 .cf input:focus,.cf textarea:focus,.cf select:focus{border-color:var(--blue2);background:rgba(52,116,245,.08);box-shadow:0 0 0 3px rgba(52,116,245,.15)}
 .cf input::placeholder,.cf textarea::placeholder{color:rgba(200,196,190,.35)}
-.cf textarea{height:108px;resize:vertical}
+.cf textarea{height:90px;resize:vertical}
 .cf select option{background:var(--dark3);color:#fff}
-.btnsd{width:100%;background:linear-gradient(135deg,var(--blue),#2057E0);border:none;border-radius:2px;color:#fff;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:16px;margin-top:6px;transition:transform .2s,box-shadow .3s;cursor:pointer}
-.btnsd:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(26,77,214,.5)}
+.btnsd{width:100%;background:linear-gradient(135deg,#25D366,#128C7E);border:none;border-radius:2px;color:#fff;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:16px;margin-top:6px;transition:transform .2s,box-shadow .3s;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px}
+.btnsd:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,211,102,.4)}
 .sok{display:none;background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.25);border-radius:2px;padding:13px;text-align:center;font-size:13px;color:#4ADE80;margin-top:13px}
 
 /* FOOTER */
 footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px solid rgba(255,255,255,.06);padding:64px 0 32px}
 .ftmain{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr;gap:52px;margin-bottom:48px}
-.fblo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.fblo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.flogo-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:700;color:var(--gold);letter-spacing:1px}
 .fbab{font-size:13px;color:rgba(180,176,170,.65);line-height:1.8;max-width:290px}
 .fc h5{font-size:9px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
 .fc a{display:block;font-size:13px;color:rgba(180,176,170,.65);margin-bottom:10px;transition:color .25s,padding-left .25s;text-decoration:none}
@@ -373,16 +366,49 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
 .fsoc a:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.08)}
 
 /* CURSOR */
-.cursor-glow{position:fixed;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.055) 0%,transparent 70%);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:left .08s,top .08s}
+.cursor-glow{position:fixed;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.055) 0%,transparent 70%);pointer-events:none;z-index:9996;transform:translate(-50%,-50%);transition:left .08s,top .08s}
 
 /* DIVIDERS */
 .sec-break{display:block;width:100%;height:4px;background:linear-gradient(90deg,transparent,var(--blue2) 25%,var(--gold) 50%,var(--blue2) 75%,transparent)}
 .sec-break-light{display:block;width:100%;height:3px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.3) 30%,rgba(52,116,245,.3) 70%,transparent)}
 
+/* STICKY WHATSAPP BUTTON */
+.sticky-wa{position:fixed;bottom:24px;right:24px;z-index:9997;background:linear-gradient(135deg,#25D366,#128C7E);border:none;border-radius:50px;padding:14px 22px;display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:transform .3s,box-shadow .3s;animation:waPulse 2.5s ease infinite}
+.sticky-wa:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(37,211,102,.6)}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1)}}
+
+/* SOCIAL PROOF POPUP */
+#sp-popup{position:fixed;bottom:24px;left:24px;z-index:9998;background:#fff;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.18);padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:300px;transform:translateX(-120%);transition:transform .5s cubic-bezier(.16,1,.3,1);border-left:4px solid var(--gold)}
+#sp-popup.show{transform:translateX(0)}
+.sp-icon{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--gold));display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+.sp-text{flex:1}
+.sp-name{font-size:13px;font-weight:600;color:#1A1A2E;margin-bottom:2px}
+.sp-action{font-size:11px;color:#6B6B85}
+.sp-time{font-size:10px;color:var(--gold);font-weight:600;margin-top:2px}
+
+/* EXIT POPUP */
+#exit-overlay{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#exit-overlay.show{opacity:1;pointer-events:all}
+#exit-popup{background:linear-gradient(160deg,#0c0c1a 0%,#111827 100%);border:1px solid rgba(201,169,110,.3);border-radius:12px;padding:48px 40px;max-width:480px;width:90%;text-align:center;position:relative;transform:translateY(30px);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+#exit-overlay.show #exit-popup{transform:translateY(0)}
+#exit-popup::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:12px 12px 0 0}
+.ep-icon{font-size:48px;margin-bottom:16px}
+.ep-title{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:12px}
+.ep-title em{font-style:italic;color:var(--gold)}
+.ep-sub{font-size:14px;color:rgba(200,196,190,.75);line-height:1.8;margin-bottom:10px}
+.ep-offer{display:inline-block;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.3);border-radius:6px;padding:10px 24px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;margin-bottom:28px}
+.ep-btns{display:flex;flex-direction:column;gap:12px;align-items:center}
+.ep-wa{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25D366,#128C7E);border:none;border-radius:6px;color:#fff;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:16px 32px;width:100%;justify-content:center;text-decoration:none;transition:transform .25s,box-shadow .3s;cursor:pointer}
+.ep-wa:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.35)}
+.ep-close{background:none;border:none;color:rgba(200,196,190,.5);font-size:13px;cursor:pointer;transition:color .2s;text-decoration:underline}
+.ep-close:hover{color:#fff}
+#exit-popup .ep-x{position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(200,196,190,.4);font-size:20px;cursor:pointer;transition:color .2s;line-height:1}
+#exit-popup .ep-x:hover{color:#fff}
+
 /* RESPONSIVE */
 @media(max-width:1200px){
   .hcards{display:none}
-  .tmgrid{grid-template-columns:repeat(3,1fr)!important}
+  .wc-grid{grid-template-columns:1fr 1fr!important}
   .svcwrap{grid-template-columns:1fr!important}
   .abgrid{grid-template-columns:1fr!important}
   .ab-badge{position:static;margin-top:20px;display:inline-block}
@@ -397,7 +423,7 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
   .wrap{padding:0 24px}
   .hin{padding:0 24px}
   .sr{grid-template-columns:1fr 1fr}
-  .tmgrid{grid-template-columns:repeat(2,1fr)!important}
+  .wc-grid{grid-template-columns:1fr!important}
   .psteps{grid-template-columns:1fr 1fr!important}
   .proj-drawer-inner{grid-template-columns:1fr 1fr!important}
   .platform-grid{grid-template-columns:1fr 1fr!important}
@@ -412,9 +438,10 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
   .cd-num{font-size:14px}
   .cd-lbl{font-size:7px}
   #hero{padding-top:130px}
+  .sticky-wa span{display:none}
+  .sticky-wa{padding:14px 16px;border-radius:50%}
 }
 @media(max-width:600px){
-  .tmgrid{grid-template-columns:1fr 1fr!important}
   .psteps{grid-template-columns:1fr!important}
   .sr{grid-template-columns:1fr 1fr}
   .sc{padding:32px 20px}
@@ -424,31 +451,70 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
   .abvals{grid-template-columns:1fr!important}
   .platform-grid{grid-template-columns:1fr!important}
   .proj-drawer-inner{grid-template-columns:1fr!important}
-  #promo-banner{padding:5px 8px;gap:4px}
-  #promo-banner p{display:none}
-  .cd-block{min-width:28px;padding:2px 4px}
-  .cd-num{font-size:12px}
   #nav{top:50px}
   #hero{padding-top:125px}
 }
-  .sticky-call{position:fixed;bottom:20px;right:20px;z-index:9997;background:linear-gradient(135deg,#1A4DD6,#2057E0);border:none;border-radius:50px;padding:14px 24px;display:none;align-items:center;gap:10px;color:#fff;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 6px 20px rgba(26,77,214,.4);transition:transform .3s,box-shadow .3s}
-.sticky-call:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(26,77,214,.6)}
-@media(max-width:900px){.sticky-call{display:flex}}
 </style>
 </head>
-  <a href="tel:+12268556194" class="sticky-call">
-  📞 Call Now
-</a>
 <body>
 
 <div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- PROMO BANNER -->
+<div id="promo-banner">
+  <p>🎁 <strong>FREE WEBSITE AUDIT</strong> (Worth $200) &mdash; Limited spots this month!</p>
+  <div class="countdown-wrap">
+    <div class="cd-block"><div class="cd-num" id="cd-days">15</div><div class="cd-lbl">Days</div></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-lbl">Hours</div></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-lbl">Mins</div></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-lbl">Secs</div></div>
+  </div>
+  <button id="promo-close" onclick="document.getElementById('promo-banner').style.display='none'">&#10005;</button>
+</div>
+
+<!-- STICKY WHATSAPP -->
+<a href="https://wa.me/12268556194?text=Hi%20Prime%20Wave!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" class="sticky-wa">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<!-- SOCIAL PROOF POPUP -->
+<div id="sp-popup">
+  <div class="sp-icon" id="sp-icon">J</div>
+  <div class="sp-text">
+    <div class="sp-name" id="sp-name">James from Toronto</div>
+    <div class="sp-action" id="sp-action">just requested a free website audit</div>
+    <div class="sp-time">Just now</div>
+  </div>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div id="exit-overlay">
+  <div id="exit-popup">
+    <button class="ep-x" onclick="closeExit()">&#10005;</button>
+    <div class="ep-icon">👋</div>
+    <div class="ep-title">Wait! Before You <em>Leave...</em></div>
+    <p class="ep-sub">Get a FREE Website Audit worth $200. We'll analyze your site's speed, SEO, mobile experience and conversion opportunities — delivered within 24 hours, completely free.</p>
+    <div class="ep-offer">🎁 FREE $200 Audit — No Credit Card Required</div>
+    <div class="ep-btns">
+      <a href="https://wa.me/12268556194?text=Hi%20Prime%20Wave!%20I%27d%20like%20to%20claim%20my%20FREE%20website%20audit." target="_blank" class="ep-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+        Claim My Free Audit on WhatsApp
+      </a>
+      <button class="ep-close" onclick="closeExit()">No thanks, I'll pass on this opportunity</button>
+    </div>
+  </div>
+</div>
 
 <!-- MOBILE NAV -->
 <div class="mobn" id="mobn">
   <a href="#hero" onclick="cm()">Home</a>
   <a href="#about" onclick="cm()">About</a>
   <a href="#services" onclick="cm()">Services</a>
-  <a href="#team" onclick="cm()">Team</a>
+  <a href="#whychoose" onclick="cm()">Why Us</a>
   <a href="#portfolio" onclick="cm()">Work</a>
   <a href="#reviews" onclick="cm()">Reviews</a>
   <a href="#faq" onclick="cm()">FAQ</a>
@@ -458,20 +524,21 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-  <span class="nav-logo-text">PRIME WAVE</span>
-</a>
+    <img src="https://i.ibb.co/qFMTcPn5/Gemini-Generated-Image-egmlk7egmlk7egml-removebg-preview-1.png" alt="Prime Wave">
+    <span class="nav-logo-name">Prime Wave</span>
+  </a>
   <ul class="nl">
     <li><a href="#hero" class="cur">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#team">Team</a></li>
+    <li><a href="#whychoose">Why Us</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nr">
-    <a href="#contact" class="nav-cta">Start a Project</a>
+    <a href="https://wa.me/12268556194?text=Hi%20Prime%20Wave!%20I%27d%20like%20to%20start%20a%20project." target="_blank" class="nav-cta">Start a Project</a>
     <button class="hbg" id="hbg" onclick="tm()"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -485,7 +552,7 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
   <div class="hgrid"></div>
   <div class="hin">
     <h1 class="h1">We craft<br><span class="it">digital</span><span class="ou">excellence.</span></h1>
-    <p class="hp">From strategy to launch &mdash; Prime Wave builds bespoke websites, conversion-first SEO, and digital experiences that turn browsers into loyal clients.</p>
+    <p class="hp">From strategy to launch &mdash; Prime Wave builds premium websites, conversion-first SEO, and digital experiences that turn visitors into paying clients.</p>
     <div class="h-gbadge">
       <div class="h-gbadge-logo">
         <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
@@ -498,7 +565,7 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
       </div>
     </div>
     <div class="hbts">
-      <a href="#contact" class="bb">Get a Free Proposal</a>
+      <a href="https://wa.me/12268556194?text=Hi%20Prime%20Wave!%20I%27d%20like%20a%20free%20proposal." target="_blank" class="bb">Get a Free Proposal</a>
       <a href="#reviews" class="bo">See Reviews</a>
     </div>
   </div>
@@ -515,7 +582,7 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
 <section id="stats">
   <div class="sr">
     <div class="sc rv"><div class="sn" data-to="42" data-sfx="+">42+</div><div class="sl">Projects Delivered</div><div class="ss">Across industries &amp; countries</div><div class="sca"></div></div>
-    <div class="sc rv d1"><div class="sn" data-to="13">13</div><div class="sl">Team Members</div><div class="ss">Specialists across every domain</div><div class="sca"></div></div>
+    <div class="sc rv d1"><div class="sn" data-to="5">5</div><div class="sl">Years Experience</div><div class="ss">Premium digital excellence</div><div class="sca"></div></div>
     <div class="sc rv d2"><div class="sn" data-to="100" data-sfx="%">100%</div><div class="sl">Client Satisfaction</div><div class="ss">Zero unhappy clients &mdash; ever</div><div class="sca"></div></div>
     <div class="sc rv d3"><div class="sn" data-to="24" data-sfx="h">24h</div><div class="sl">Response Guarantee</div><div class="ss">Available across all time zones</div><div class="sca"></div></div>
   </div>
@@ -534,7 +601,7 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
         <div class="lbl rv"><div class="lbl-bar"></div><span class="lbl-txt">About Us</span></div>
         <h2 class="hdk rv" style="margin-bottom:16px">We are <em>Prime Wave.</em></h2>
         <p class="rv d1">Prime Wave is a premium web design and development agency based in Canada, built on one belief: every business deserves a world-class digital presence. We combine strategic thinking, technical excellence, and design craft to build websites that don&rsquo;t just look great &mdash; they perform.</p>
-        <p class="rv d2" style="margin-top:16px">With <strong>42+ successful projects</strong> across WordPress, Shopify, Wix, PHP, and custom code, our team of 13 specialists has helped businesses across Canada, the USA, Europe, and beyond grow their revenue and dominate their market online.</p>
+        <p class="rv d2" style="margin-top:16px">With <strong>42+ successful projects</strong> across WordPress, Shopify, Wix, and custom code, we have helped businesses across Canada, the USA, Australia, Singapore, and beyond grow their revenue and dominate their market online.</p>
         <div class="abvals rv d3">
           <div class="abv"><div class="abv-ico">&#9889;</div><div class="abv-ti">Excellence First</div><div class="abv-de">Every pixel and line of code held to the highest standard.</div></div>
           <div class="abv"><div class="abv-ico">&#127919;</div><div class="abv-ti">Strategy-Driven</div><div class="abv-de">We lead with data and research before opening any design tool.</div></div>
@@ -542,7 +609,7 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
           <div class="abv"><div class="abv-ico">&#129309;</div><div class="abv-ti">Long-Term Partners</div><div class="abv-de">We measure success by your growth, not by closing invoices.</div></div>
         </div>
         <div style="display:flex;gap:14px;flex-wrap:wrap" class="rv d4">
-          <a href="#contact" class="bb">Work With Us</a>
+          <a href="https://wa.me/12268556194?text=Hi%20Prime%20Wave!%20I%27d%20like%20to%20work%20with%20you." target="_blank" class="bb">Work With Us</a>
           <a href="#portfolio" class="bg-btn">See Our Work</a>
         </div>
       </div>
@@ -569,29 +636,30 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
         </div>
       </div>
       <div class="orbwrap">
-        <div class="orb">
-          <div class="or or1"></div>
-          <div class="or or2"></div>
-          <div class="or or3"></div>
-          <div class="orc"><div class="orc-txt">Prime<br>Wave</div></div>
-        </div>
+        <div class="orb"><div class="or or1"></div><div class="or or2"></div><div class="or or3"></div><div class="orc"><div class="orc-txt">Prime<br>Wave</div></div></div>
       </div>
     </div>
   </div>
 </section>
 <span class="sec-break"></span>
 
-<!-- TEAM -->
-<section id="team">
-  <div class="wrap tmz">
-    <div class="tmhd">
-      <div>
-        <div class="lbl rv"><div class="lbl-bar"></div><span class="lbl-txt">The People</span></div>
-        <h2 class="hlt rv">9 Experts,<br><em>One Vision.</em></h2>
-      </div>
-      <a href="#contact" class="bs rv">Work With Us &#8594;</a>
+<!-- WHY CHOOSE US -->
+<section id="whychoose">
+  <div class="wrap wc-z">
+    <div class="lbl rv" style="justify-content:center"><div class="lbl-bar"></div><span class="lbl-txt">Why Choose Us</span><div class="lbl-bar"></div></div>
+    <h2 class="hlt rv" style="text-align:center;margin-bottom:0">Why clients choose <em>Prime Wave</em></h2>
+    <p style="text-align:center;color:rgba(200,196,190,.6);font-size:15px;margin-top:14px;max-width:540px;margin-left:auto;margin-right:auto" class="rv d1">We don't just build websites. We build revenue-generating digital assets that work for your business 24 hours a day, 7 days a week.</p>
+    <div class="wc-grid">
+      <div class="wc-card rv"><span class="wc-ico">⚡</span><div class="wc-title">Lightning Fast Delivery</div><p class="wc-desc">Most websites delivered in 1-3 weeks. We work efficiently without ever cutting corners on quality.</p></div>
+      <div class="wc-card rv d1"><span class="wc-ico">📱</span><div class="wc-title">Mobile-First Always</div><p class="wc-desc">Over 70% of your clients browse on phones. Every site we build looks and performs perfectly on all devices.</p></div>
+      <div class="wc-card rv d2"><span class="wc-ico">🔍</span><div class="wc-title">SEO Built-In From Day One</div><p class="wc-desc">Technical SEO, proper structure, and Core Web Vitals optimized from the start — not added as an afterthought.</p></div>
+      <div class="wc-card rv d3"><span class="wc-ico">💬</span><div class="wc-title">24-Hour Response Guarantee</div><p class="wc-desc">Every message answered within 24 hours. You will never be left wondering what is happening with your project.</p></div>
+      <div class="wc-card rv"><span class="wc-ico">⭐</span><div class="wc-title">5.0 Google Rating</div><p class="wc-desc">100% client satisfaction across 42+ projects. Our reviews speak louder than any promise we could make.</p></div>
+      <div class="wc-card rv d1"><span class="wc-ico">🌍</span><div class="wc-title">Global Experience</div><p class="wc-desc">We've delivered projects in Canada, USA, Australia, Singapore, Chile and more. We understand global markets.</p></div>
     </div>
-    <div class="tmgrid" id="tmgrid"></div>
+    <div style="text-align:center;margin-top:48px" class="rv d2">
+      <a href="https://wa.me/12268556194?text=Hi%20Prime%20Wave!%20I%27d%20like%20a%20free%20website%20audit." target="_blank" class="bb">Get Your Free Audit Today &rarr;</a>
+    </div>
   </div>
 </section>
 <span class="sec-break"></span>
@@ -604,10 +672,10 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
       <h2 class="hlt rv" style="text-align:center;margin-bottom:0">Our <em>Process</em></h2>
     </div>
     <div class="psteps">
-      <div class="ps rv"><div class="psci"><span class="psno">01</span></div><div class="psti">Discovery</div><p class="psde">Deep research into your brand, audience, and competitors. We define clear KPIs and a roadmap before any design begins.</p></div>
-      <div class="ps rv d1"><div class="psci"><span class="psno">02</span></div><div class="psti">Design</div><p class="psde">High-fidelity mockups driven by brand strategy, conversion psychology, and your unique market positioning.</p></div>
-      <div class="ps rv d2"><div class="psci"><span class="psno">03</span></div><div class="psti">Build</div><p class="psde">Clean, semantic, performance-first code. SEO and accessibility baked in from day one, not bolted on as an afterthought.</p></div>
-      <div class="ps rv d3"><div class="psci"><span class="psno">04</span></div><div class="psti">Launch &amp; Grow</div><p class="psde">Rigorous QA, seamless launch, and ongoing partnership. We track results and iterate so you keep growing post-launch.</p></div>
+      <div class="ps rv"><div class="psci"><span class="psno">01</span></div><div class="psti">Discovery</div><p class="psde">Deep research into your brand, audience, and competitors. We define clear goals before any design begins.</p></div>
+      <div class="ps rv d1"><div class="psci"><span class="psno">02</span></div><div class="psti">Design</div><p class="psde">High-fidelity mockups driven by brand strategy, conversion psychology, and your unique market position.</p></div>
+      <div class="ps rv d2"><div class="psci"><span class="psno">03</span></div><div class="psti">Build</div><p class="psde">Clean, fast, SEO-optimized code. Accessibility and performance baked in from day one.</p></div>
+      <div class="ps rv d3"><div class="psci"><span class="psno">04</span></div><div class="psti">Launch &amp; Grow</div><p class="psde">Smooth launch, post-launch support, and ongoing partnership so you keep growing after go-live.</p></div>
     </div>
   </div>
 </section>
@@ -622,14 +690,12 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
     </div>
     <p class="port-sub rv d1">Click any platform below to explore all projects in that category.</p>
     <div class="platform-grid" id="platform-grid"></div>
-    <div class="proj-drawer" id="proj-drawer">
-      <div class="proj-drawer-inner" id="proj-drawer-inner"></div>
-    </div>
+    <div class="proj-drawer" id="proj-drawer"><div class="proj-drawer-inner" id="proj-drawer-inner"></div></div>
   </div>
 </section>
 <span class="sec-break"></span>
 
-<!-- REVIEWS SLIDESHOW -->
+<!-- REVIEWS -->
 <section id="reviews">
   <div class="wrap rv-z">
     <div class="rv-hd rv">
@@ -642,69 +708,25 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
           <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
           <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.75)">Google</span>
         </div>
-        <div>
-          <div class="g-score-num">5.0</div>
-          <div class="g-stars"><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span></div>
-          <div class="g-count">BASED ON 4 REVIEWS</div>
-        </div>
+        <div><div class="g-score-num">5.0</div><div class="g-stars"><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span><span class="g-star">&#9733;</span></div><div class="g-count">BASED ON 4 REVIEWS</div></div>
       </div>
     </div>
-
-    <!-- SLIDESHOW -->
     <div class="slideshow-wrap rv d1">
       <div class="slides-track" id="slides-track">
-        <!-- Slide 1: Reviews 1 & 2 -->
-        <div class="slide">
-          <div class="slide-inner">
-            <div class="rev-card">
-              <div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
-              <div class="rev-q">"</div>
-              <div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div>
-              <p class="rev-text">Prime Wave Agency did an incredible job on my website! They were professional, easy to work with, and delivered more than I expected. The final design was clean, modern, and perfectly matched my vision. I highly recommend them to anyone looking for quality and reliability!</p>
-              <div class="rev-client"><div class="rev-av">L</div><div><div class="rev-nm">Lisa F Hanson</div><div class="rev-si">&#9733; Verified Google Review</div></div></div>
-            </div>
-            <div class="rev-card">
-              <div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
-              <div class="rev-q">"</div>
-              <div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div>
-              <p class="rev-text">Working with Prime Wave Agency was one of the best decisions I made for my business. They understood exactly what I needed and turned it into a stunning, professional website. The process was smooth, and their communication was excellent throughout. Highly recommended.</p>
-              <div class="rev-client"><div class="rev-av">K</div><div><div class="rev-nm">Katherine V. Harris</div><div class="rev-si">&#9733; Verified Google Review</div></div></div>
-            </div>
-          </div>
-        </div>
-        <!-- Slide 2: Reviews 3 & 4 -->
-        <div class="slide">
-          <div class="slide-inner">
-            <div class="rev-card">
-              <div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
-              <div class="rev-q">"</div>
-              <div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div>
-              <p class="rev-text">I hired Prime Wave for my website SEO, and the results have been incredible. My site is performing perfectly, honestly much better than I ever expected! If you want a specialist who actually delivers high-authority results and professional service, look no further. Highly recommended!</p>
-              <div class="rev-client"><div class="rev-av">C</div><div><div class="rev-nm">Carmen P. Lovell</div><div class="rev-si">&#9733; Verified Google Review</div></div></div>
-            </div>
-            <div class="rev-card">
-              <div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div>
-              <div class="rev-q">"</div>
-              <div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div>
-              <p class="rev-text">Prime Wave delivered exceptional results for my website optimization. The performance has far exceeded my expectations, and the entire process was seamless. Highly recommended for anyone seeking professional, high-impact SEO services.</p>
-              <div class="rev-client"><div class="rev-av">T</div><div><div class="rev-nm">Tracy C. Fidler</div><div class="rev-si">&#9733; Verified Google Review</div></div></div>
-            </div>
-          </div>
-        </div>
+        <div class="slide"><div class="slide-inner">
+          <div class="rev-card"><div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="rev-q">"</div><div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div><p class="rev-text">Prime Wave Agency did an incredible job on my website! They were professional, easy to work with, and delivered more than I expected. The final design was clean, modern, and perfectly matched my vision. I highly recommend them!</p><div class="rev-client"><div class="rev-av">L</div><div><div class="rev-nm">Lisa F Hanson</div><div class="rev-si">&#9733; Verified Google Review</div></div></div></div>
+          <div class="rev-card"><div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="rev-q">"</div><div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div><p class="rev-text">Working with Prime Wave Agency was one of the best decisions I made for my business. They understood exactly what I needed and turned it into a stunning, professional website. Communication was excellent throughout.</p><div class="rev-client"><div class="rev-av">K</div><div><div class="rev-nm">Katherine V. Harris</div><div class="rev-si">&#9733; Verified Google Review</div></div></div></div>
+        </div></div>
+        <div class="slide"><div class="slide-inner">
+          <div class="rev-card"><div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="rev-q">"</div><div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div><p class="rev-text">I hired Prime Wave for my website SEO, and the results have been incredible. My site is performing perfectly, honestly much better than I ever expected! If you want a specialist who delivers real results, look no further.</p><div class="rev-client"><div class="rev-av">C</div><div><div class="rev-nm">Carmen P. Lovell</div><div class="rev-si">&#9733; Verified Google Review</div></div></div></div>
+          <div class="rev-card"><div class="rev-gbadge"><svg viewBox="0 0 24 24" fill="none" width="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC04"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="rev-q">"</div><div class="rev-stars"><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span><span class="rev-star">&#9733;</span></div><p class="rev-text">Prime Wave delivered exceptional results for my website optimization. The performance has far exceeded my expectations, and the entire process was seamless. Highly recommended for professional, high-impact SEO services.</p><div class="rev-client"><div class="rev-av">T</div><div><div class="rev-nm">Tracy C. Fidler</div><div class="rev-si">&#9733; Verified Google Review</div></div></div></div>
+        </div></div>
       </div>
-      <!-- Controls -->
       <div class="slides-nav">
-        <div class="slides-dots" id="slides-dots">
-          <button class="sdot on" onclick="goSlide(0)"></button>
-          <button class="sdot" onclick="goSlide(1)"></button>
-        </div>
-        <div class="slides-arrows">
-          <button class="sarrow" onclick="prevSlide()">&#8592;</button>
-          <button class="sarrow" onclick="nextSlide()">&#8594;</button>
-        </div>
+        <div class="slides-dots" id="slides-dots"><button class="sdot on" onclick="goSlide(0)"></button><button class="sdot" onclick="goSlide(1)"></button></div>
+        <div class="slides-arrows"><button class="sarrow" onclick="prevSlide()">&#8592;</button><button class="sarrow" onclick="nextSlide()">&#8594;</button></div>
       </div>
     </div>
-
     <div class="review-cta rv d2">
       <div><div class="review-cta-t">Happy with our work? Leave us a review.</div><div class="review-cta-s">It takes 30 seconds and helps other businesses find us on Google.</div></div>
       <a href="https://share.google/zN5cOPYApmIxzMCov" target="_blank" rel="noopener" class="btn-gol">Leave a Google Review &#8594;</a>
@@ -722,12 +744,12 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
     </div>
     <div class="faq-grid rv d1">
       <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">How long does it take to build a website?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Most websites are completed within 1-3 weeks depending on complexity. A simple landing page can be done in 3-5 days, while a full e-commerce store may take 2-4 weeks. We always provide a clear timeline before starting.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">How much does a website cost?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Our pricing depends on your requirements. A basic website starts from $500, while a full custom e-commerce store starts from $1,500. Contact us for a free no-obligation quote tailored to your specific needs and budget.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">How much does a website cost?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Our pricing depends on your requirements. A basic website starts from $500, while a full custom e-commerce store starts from $1,500. Contact us via WhatsApp for a free no-obligation quote tailored to your specific needs.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">What platforms do you work with?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">We work with WordPress, Shopify, Wix, Squarespace, Webflow, and custom HTML/CSS/JavaScript. We recommend the best platform based on your specific business goals and budget.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">Do you offer ongoing maintenance?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Yes! We offer monthly maintenance plans that include updates, security monitoring, backups, and performance optimization. This ensures your website stays fast, secure, and up to date at all times.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">Will my website be mobile friendly?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Absolutely. Every website we build is fully responsive and mobile-first. We test across all devices and screen sizes to ensure a perfect experience for every visitor regardless of what device they use.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">Do you provide SEO with the website?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Yes. All our websites include basic on-page SEO including meta tags, schema markup, fast loading speeds, and proper heading structure. We also offer advanced SEO packages for businesses that want to rank higher on Google.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">How do I get started?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Simply contact us via WhatsApp or email with a brief description of your project. We will respond within 24 hours with a free proposal and timeline. No commitment required to get a quote from us.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">Do you provide SEO with the website?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Yes. All our websites include on-page SEO including meta tags, schema markup, fast loading speeds, and proper heading structure. We also offer advanced SEO packages for businesses that want to rank higher on Google.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">How do I get started?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Simply message us on WhatsApp with a brief description of your project. We will respond within 24 hours with a free proposal and timeline. No commitment required to get a quote from us.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span class="faq-qt">Can you redesign my existing website?</span><span class="faq-ico">+</span></div><div class="faq-body"><div class="faq-ans">Yes! Website redesign is one of our most popular services. We analyze your current site, identify what is not working, and rebuild it with a modern design that converts better and loads faster than before.</div></div></div>
     </div>
   </div>
@@ -745,30 +767,29 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
       <div class="rv">
         <div class="lbl"><div class="lbl-bar"></div><span class="lbl-txt">Contact Details</span></div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px">Let&rsquo;s talk about<br><em style="color:var(--gold);font-style:italic">your vision.</em></h3>
-        <p style="font-size:14px;color:rgba(200,196,190,.65);line-height:1.8">We work with businesses of all sizes, from ambitious startups to established brands ready to level up.</p>
+        <p style="font-size:14px;color:rgba(200,196,190,.65);line-height:1.8">We work with businesses of all sizes — from ambitious startups to established brands ready to level up.</p>
         <div class="ciitems">
+          <div class="ci"><div class="ciic">💬</div><div><div class="cilb">WhatsApp (Fastest)</div><div class="civl"><a href="https://wa.me/12268556194" target="_blank" rel="noopener">+1 (226) 855-6194</a></div></div></div>
           <div class="ci"><div class="ciic">&#9993;</div><div><div class="cilb">Email</div><div class="civl"><a href="mailto:primewave.agency1@gmail.com">primewave.agency1@gmail.com</a></div></div></div>
-          <div class="ci"><div class="ciic">&#128172;</div><div><div class="cilb">WhatsApp</div><div class="civl"><a href="https://wa.me/12268556194" target="_blank" rel="noopener">+1 (226) 855-6194</a></div></div></div>
           <div class="ci"><div class="ciic">&#128205;</div><div><div class="cilb">Location</div><div class="civl">Canada &middot; Serving clients worldwide</div></div></div>
-          <div class="ci"><div class="ciic">&#9672;</div><div><div class="cilb">Social</div><div class="civl"><a href="https://www.instagram.com/primewave301" target="_blank" rel="noopener">@primewave301</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@primewave3011" target="_blank" rel="noopener">@primewave3011</a></div></div></div>
+          <div class="ci"><div class="ciic">📸</div><div><div class="cilb">Instagram</div><div class="civl"><a href="https://www.instagram.com/primewave301" target="_blank" rel="noopener">@primewave301</a></div></div></div>
+          <div class="ci"><div class="ciic">🎵</div><div><div class="cilb">TikTok</div><div class="civl"><a href="https://www.tiktok.com/@primewave3011" target="_blank" rel="noopener">@primewave3011</a></div></div></div>
         </div>
       </div>
       <div class="cform rv d2">
         <div class="cfti">Send a Message</div>
-        <div class="cr2">
-          <div class="cf"><label>First Name</label><input type="text" id="fn" placeholder="John"></div>
-          <div class="cf"><label>Last Name</label><input type="text" id="ln" placeholder="Smith"></div>
-        </div>
-        <div class="cf"><label>Email Address</label><input type="email" id="em" placeholder="john@company.com"></div>
+        <p class="cf-note-top">Fill in the form below and we'll reply via WhatsApp within 24 hours.</p>
+        <div class="cf"><label>Your Name *</label><input type="text" id="fn" placeholder="John Smith"></div>
+        <div class="cf"><label>Email Address *</label><input type="email" id="em" placeholder="john@company.com"></div>
         <div class="cf"><label>Service Needed</label>
           <select id="sv"><option value="">Choose a service...</option><option>Full Website Design and Development</option><option>UI/UX Design and Redesign</option><option>Technical SEO and Audit</option><option>E-Commerce Development</option><option>Bug Fixing and Error Resolution</option><option>Website Maintenance and Support</option><option>Other</option></select>
         </div>
-        <div class="cf"><label>Budget Range</label>
-          <select id="bdg"><option value="">Select budget...</option><option>Under $500</option><option>$500 to $1,500</option><option>$1,500 to $5,000</option><option>$5,000 to $15,000</option><option>$15,000+</option></select>
-        </div>
-        <div class="cf"><label>Project Details</label><textarea id="mg" placeholder="Tell us about your project, goals, and timeline..."></textarea></div>
-        <button class="btnsd" onclick="sendForm()">Send to WhatsApp</button>
-        <div class="sok" id="sok">Message prepared! Opening WhatsApp now...</div>
+        <div class="cf"><label>Project Details *</label><textarea id="mg" placeholder="Tell us about your project, goals, and timeline..."></textarea></div>
+        <button class="btnsd" onclick="sendForm()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+          Send via WhatsApp
+        </button>
+        <div class="sok" id="sok">✅ Opening WhatsApp now...</div>
       </div>
     </div>
   </div>
@@ -780,15 +801,16 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
     <div class="ftmain">
       <div>
         <div class="fblo">
-          <span class="nav-logo-text">PRIME WAVE</span>
+          <img src="https://i.ibb.co/qFMTcPn5/Gemini-Generated-Image-egmlk7egmlk7egml-removebg-preview-1.png" alt="Prime Wave" style="height:36px;width:auto">
+          <span class="flogo-name">Prime Wave</span>
         </div>
         <p class="fbab">Building premium digital experiences that convert. Based in Canada, serving ambitious brands worldwide. 42+ projects. 100% satisfaction.</p>
       </div>
-      <div class="fc"><h5>Navigate</h5><a href="#hero">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#team">Team</a><a href="#portfolio">Portfolio</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+      <div class="fc"><h5>Navigate</h5><a href="#hero">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#whychoose">Why Us</a><a href="#portfolio">Portfolio</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
       <div class="fc"><h5>Services</h5><a href="#services">Web Design</a><a href="#services">Development</a><a href="#services">Technical SEO</a><a href="#services">E-Commerce</a><a href="#services">Maintenance</a></div>
       <div class="fc"><h5>Connect</h5>
-        <a href="mailto:primewave.agency1@gmail.com">📧 Email Us</a>
         <a href="https://wa.me/12268556194" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a href="mailto:primewave.agency1@gmail.com">📧 Email Us</a>
         <a href="https://www.instagram.com/primewave301" target="_blank" rel="noopener">📸 Instagram</a>
         <a href="https://www.tiktok.com/@primewave3011" target="_blank" rel="noopener">🎵 TikTok</a>
       </div>
@@ -796,56 +818,16 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
     <div class="ftbtm">
       <p>&copy; 2026 Prime Wave Agency. All rights reserved. Proudly based in Canada.</p>
       <div class="fsoc">
-        <a href="https://wa.me/12268556194" target="_blank" rel="noopener" title="WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/primewave301" target="_blank" rel="noopener" title="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@primewave3011" target="_blank" rel="noopener" title="TikTok">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0z"/></svg>
-        </a>
-        <a href="mailto:primewave.agency1@gmail.com" title="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
-        </a>
+        <a href="https://wa.me/12268556194" target="_blank" rel="noopener" title="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></a>
+        <a href="https://www.instagram.com/primewave301" target="_blank" rel="noopener" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg></a>
+        <a href="https://www.tiktok.com/@primewave3011" target="_blank" rel="noopener" title="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0z"/></svg></a>
+        <a href="mailto:primewave.agency1@gmail.com" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg></a>
       </div>
     </div>
   </div>
 </footer>
-<script>
-var TEAM=[
-  {n:"Marcus D.",r:"Founder & Director",b:"Leadership",bio:"Visionary founder driving strategy, client relationships, and the Prime Wave standard of excellence.",img:"preview.webp"},
-  {n:"Alex M.",r:"Full Stack Developer",b:"Engineering",bio:"Builds scalable web applications with clean, maintainable code architectures.",img:"preview%20(1).webp"},
-  {n:"Jordan K.",r:"UI/UX Designer",b:"Design",bio:"Creates conversion-focused interfaces that balance stunning aesthetics with usability.",img:"preview%20(2).webp"},
-  {n:"Sam R.",r:"SEO Specialist",b:"Growth",bio:"Data-driven strategist building organic growth engines that dominate search rankings.",img:"preview%20(3).webp"},
-  {n:"Chris T.",r:"WordPress Expert",b:"WordPress",bio:"Masters custom WordPress themes, plugins, and performance tuning for flawless experiences.",img:"preview%20(4).webp"},
-  {n:"Mia L.",r:"E-Commerce Developer",b:"Commerce",bio:"Builds high-revenue Shopify and WooCommerce stores optimized for conversion and scale.",img:"preview%20(5).webp"},
-  {n:"Ryan D.",r:"Technical SEO Lead",b:"Technical",bio:"Deep expertise in Core Web Vitals, structured data, and technical site architecture.",img:"preview%20(6).webp"},
-  {n:"Daniel K.",r:"Backend Developer",b:"Backend",bio:"Architects robust server-side systems, APIs, and database solutions built to scale.",img:"preview%20(7).webp"},
-  {n:"Omar F.",r:"Performance Engineer",b:"Performance",bio:"Optimizes site speed, Core Web Vitals, and infrastructure for maximum performance scores.",img:"preview%20(8).webp"}
-];
-(function(){
-  var delays=["","d1","d2","d3"];
-  var h="";
-  for(var i=0;i<TEAM.length;i++){
-    var m=TEAM[i];
-    h+='<article class="tm rv '+delays[i%4]+'">'
-     +'<div class="tmimg">'
-     +'<img src="'+m.img+'" alt="'+m.n+'" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">'
-     +'<div class="tmfade"></div>'
-     +'<div class="tmbadge">'+m.b+'</div>'
-     +'<div class="tmov"><div class="tmn">'+m.n+'</div><div class="tmr">'+m.r+'</div></div>'
-     +'<div class="tm-hover-overlay">'
-     +'<div class="tm-hover-name">'+m.n+'</div>'
-     +'<div class="tm-hover-role">'+m.r+'</div>'
-     +'<p class="tm-hover-bio">'+m.bio+'</p>'
-     +'<div class="tmsoc"><a href="https://wa.me/12268556194" target="_blank" class="tms">W</a><a href="https://www.instagram.com/primewave301" target="_blank" class="tms">IG</a></div>'
-     +'</div>'
-     +'</div></article>';
-  }
-  document.getElementById("tmgrid").innerHTML=h;
-})();
 
+<script>
 /* ====== PORTFOLIO ====== */
 var PROJ=[
   {d:"licenceappeal.com.au",p:"WordPress",s:"Redesign",tx:"Legal services site modernized with improved UX and conversion flow."},
@@ -891,18 +873,10 @@ var PROJ=[
   {d:"usperennials.com",p:"Other",s:"Auditing",tx:"Plant nursery audit covering performance, SEO, and conversion."},
   {d:"betterdisplaycases.com",p:"Shopify",s:"Full Design",tx:"Display case store with custom product configurator and wholesale portal."}
 ];
-
 var PICONS={"WordPress":"WP","Shopify":"SH","Wix":"WX","Squarespace":"SQ","Custom":"CS","Weebly":"WB","Duda":"DU","Zyro":"ZY","Other":"OT"};
 var PORDER=["WordPress","Shopify","Wix","Custom","Squarespace","Other","Weebly","Duda","Zyro"];
-var groups={};
-var activePlatform=null;
-
-for(var i=0;i<PROJ.length;i++){
-  var pl=PROJ[i].p;
-  if(!groups[pl])groups[pl]=[];
-  groups[pl].push(PROJ[i]);
-}
-
+var groups={};var activePlatform=null;
+for(var i=0;i<PROJ.length;i++){var pl=PROJ[i].p;if(!groups[pl])groups[pl]=[];groups[pl].push(PROJ[i]);}
 function buildPortfolioGrid(){
   var html="";
   for(var j=0;j<PORDER.length;j++){
@@ -914,37 +888,25 @@ function buildPortfolioGrid(){
     html+='<div class="pc-icon">'+PICONS[p]+'</div>';
     html+='<div class="pc-name">'+p+'</div>';
     html+='<div class="pc-count">'+cnt+' project'+(cnt===1?"":"s")+'</div>';
-    html+='<span class="pc-arrow">&#8594;</span>';
-    html+='</div>';
+    html+='<span class="pc-arrow">&#8594;</span></div>';
   }
   document.getElementById("platform-grid").innerHTML=html;
 }
-
 function buildProjectCards(pl){
-  var projs=groups[pl]||[];
-  var h="";
+  var projs=groups[pl]||[];var h="";
   for(var i=0;i<projs.length;i++){
     var pr=projs[i];
-    h+='<div class="pcard">';
-    h+='<div class="ptags"><span class="tp">'+pr.p+'</span><span class="ts">'+pr.s+'</span></div>';
-    h+='<div class="pdm">'+pr.d+'</div>';
-    h+='<div class="pds">'+pr.tx+'</div>';
-    h+='<a href="https://'+pr.d+'" target="_blank" rel="noopener" class="pgo">View Site &#8594;</a>';
-    h+='</div>';
+    h+='<div class="pcard"><div class="ptags"><span class="tp">'+pr.p+'</span><span class="ts">'+pr.s+'</span></div>';
+    h+='<div class="pdm">'+pr.d+'</div><div class="pds">'+pr.tx+'</div>';
+    h+='<a href="https://'+pr.d+'" target="_blank" rel="noopener" class="pgo">View Site &#8594;</a></div>';
   }
   return h;
 }
-
 function togglePlatform(pl){
   var drawer=document.getElementById("proj-drawer");
   var inner=document.getElementById("proj-drawer-inner");
   var allCards=document.querySelectorAll(".platform-card");
-  if(activePlatform===pl){
-    drawer.classList.remove("open");
-    activePlatform=null;
-    allCards.forEach(function(c){c.classList.remove("active");});
-    return;
-  }
+  if(activePlatform===pl){drawer.classList.remove("open");activePlatform=null;allCards.forEach(function(c){c.classList.remove("active");});return;}
   activePlatform=pl;
   allCards.forEach(function(c){c.classList.remove("active");});
   var sid="pfpc-"+pl.replace(/[^a-zA-Z0-9]/g,"-");
@@ -954,202 +916,74 @@ function togglePlatform(pl){
   drawer.classList.add("open");
   setTimeout(function(){drawer.scrollIntoView({behavior:"smooth",block:"nearest"});},150);
 }
-
 buildPortfolioGrid();
 
-/* ====== REVIEWS SLIDESHOW ====== */
-var currentSlide=0;
-var totalSlides=2;
-var autoTimer=null;
-
-function goSlide(n){
-  currentSlide=n;
-  document.getElementById("slides-track").style.transform="translateX(-"+n+"00%)";
-  document.querySelectorAll(".sdot").forEach(function(d,i){
-    d.classList.toggle("on",i===n);
-  });
-}
-function nextSlide(){
-  goSlide((currentSlide+1)%totalSlides);
-  resetAuto();
-}
-function prevSlide(){
-  goSlide((currentSlide-1+totalSlides)%totalSlides);
-  resetAuto();
-}
-function resetAuto(){
-  clearInterval(autoTimer);
-  autoTimer=setInterval(function(){nextSlide();},5000);
-}
+/* ====== REVIEWS ====== */
+var currentSlide=0;var totalSlides=2;var autoTimer=null;
+function goSlide(n){currentSlide=n;document.getElementById("slides-track").style.transform="translateX(-"+n+"00%)";document.querySelectorAll(".sdot").forEach(function(d,i){d.classList.toggle("on",i===n);});}
+function nextSlide(){goSlide((currentSlide+1)%totalSlides);resetAuto();}
+function prevSlide(){goSlide((currentSlide-1+totalSlides)%totalSlides);resetAuto();}
+function resetAuto(){clearInterval(autoTimer);autoTimer=setInterval(function(){nextSlide();},5000);}
 resetAuto();
 
 /* ====== NAV ====== */
 var mobo=false;
-function tm(){
-  mobo=!mobo;
-  document.getElementById("mobn").classList.toggle("open",mobo);
-  document.getElementById("hbg").classList.toggle("open",mobo);
-}
-function cm(){
-  mobo=false;
-  document.getElementById("mobn").classList.remove("open");
-  document.getElementById("hbg").classList.remove("open");
-}
+function tm(){mobo=!mobo;document.getElementById("mobn").classList.toggle("open",mobo);document.getElementById("hbg").classList.toggle("open",mobo);}
+function cm(){mobo=false;document.getElementById("mobn").classList.remove("open");document.getElementById("hbg").classList.remove("open");}
 window.addEventListener("scroll",function(){
   document.getElementById("nav").classList.toggle("solid",window.scrollY>80);
-  var ids=["hero","stats","about","services","team","process","portfolio","reviews","faq","contact"];
+  var ids=["hero","stats","about","services","whychoose","process","portfolio","reviews","faq","contact"];
   var cur="hero";
-  for(var i=0;i<ids.length;i++){
-    var el=document.getElementById(ids[i]);
-    if(el&&window.scrollY>=el.offsetTop-130)cur=ids[i];
-  }
-  document.querySelectorAll(".nl a").forEach(function(a){
-    a.classList.toggle("cur",a.getAttribute("href")==="#"+cur);
-  });
+  for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&window.scrollY>=el.offsetTop-130)cur=ids[i];}
+  document.querySelectorAll(".nl a").forEach(function(a){a.classList.toggle("cur",a.getAttribute("href")==="#"+cur);});
 },{passive:true});
 
 /* ====== CURSOR ====== */
-document.addEventListener("mousemove",function(e){
-  var g=document.getElementById("cursorGlow");
-  if(g){g.style.left=e.clientX+"px";g.style.top=e.clientY+"px";}
-});
+document.addEventListener("mousemove",function(e){var g=document.getElementById("cursorGlow");if(g){g.style.left=e.clientX+"px";g.style.top=e.clientY+"px";}});
 
 /* ====== TICKER ====== */
 var TK=["Web Design","Technical SEO","E-Commerce","UI/UX Design","WordPress","Wix","Shopify","Full Stack Dev","42+ Projects","100% Satisfaction","Canada-Based","24h Response"];
-(function(){
-  var a=TK.concat(TK);
-  var h="";
-  for(var i=0;i<a.length;i++)h+='<span class="ti"><span class="tdot"></span>'+a[i]+'</span>';
-  document.getElementById("tkbelt").innerHTML=h;
-})();
+(function(){var a=TK.concat(TK);var h="";for(var i=0;i<a.length;i++)h+='<span class="ti"><span class="tdot"></span>'+a[i]+'</span>';document.getElementById("tkbelt").innerHTML=h;})();
 
 /* ====== COUNT UP ====== */
-function runCount(el){
-  var to=parseInt(el.getAttribute("data-to"),10);
-  var sfx=el.getAttribute("data-sfx")||"+";
-  var step=to/(1600/16);var cur=0;
-  var iv=setInterval(function(){
-    cur+=step;
-    if(cur>=to){cur=to;clearInterval(iv);}
-    el.textContent=Math.floor(cur)+sfx;
-  },16);
-}
-var statObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.querySelectorAll(".sn[data-to]").forEach(runCount);statObs.unobserve(e.target);}
-  });
-},{threshold:0.4});
-var statSec=document.getElementById("stats");
-if(statSec)statObs.observe(statSec);
+function runCount(el){var to=parseInt(el.getAttribute("data-to"),10);var sfx=el.getAttribute("data-sfx")||"+";var step=to/(1600/16);var cur=0;var iv=setInterval(function(){cur+=step;if(cur>=to){cur=to;clearInterval(iv);}el.textContent=Math.floor(cur)+sfx;},16);}
+var statObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll(".sn[data-to]").forEach(runCount);statObs.unobserve(e.target);}});},{threshold:0.4});
+var statSec=document.getElementById("stats");if(statSec)statObs.observe(statSec);
 
 /* ====== SCROLL REVEAL ====== */
-document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});
+(function(){
+  function revealAll(){document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in");});}
+  revealAll();
+  setTimeout(revealAll,200);
+})();
 
 /* ====== FAQ ====== */
-function tfaq(el){
-  var item=el.parentElement;
-  document.querySelectorAll(".faq-item").forEach(function(i){if(i!==item)i.classList.remove("open");});
-  item.classList.toggle("open");
-}
+function tfaq(el){var item=el.parentElement;document.querySelectorAll(".faq-item").forEach(function(i){if(i!==item)i.classList.remove("open");});item.classList.toggle("open");}
 
-/* ====== CONTACT ====== */
+/* ====== CONTACT — sends to WhatsApp ====== */
 function sendForm(){
   var fn=document.getElementById("fn").value.trim();
-  var ln=document.getElementById("ln").value.trim();
   var em=document.getElementById("em").value.trim();
   var sv=document.getElementById("sv").value;
-  var bdg=document.getElementById("bdg").value;
   var mg=document.getElementById("mg").value.trim();
   if(!fn||!em||!mg){alert("Please fill in your name, email, and project details.");return;}
-  
-  var subject="New Project Inquiry from "+fn+" "+ln;
-  var body="Name: "+fn+" "+ln+"%0D%0A"
-    +"Email: "+em+"%0D%0A"
-    +"Service: "+(sv||"Not specified")+"%0D%0A"
-    +"Budget: "+(bdg||"Not specified")+"%0D%0A%0D%0A"
-    +"Project Details:%0D%0A"+encodeURIComponent(mg)+"%0D%0A%0D%0A"
-    +"From: primewaveagency.org";
-  
-  document.getElementById("sok").textContent="Opening your email client...";
+  var msg="New Project Inquiry - Prime Wave\n\nName: "+fn+"\nEmail: "+em+"\nService: "+(sv||"Not specified")+"\n\nDetails:\n"+mg+"\n\nFrom: primewaveagency.online";
   document.getElementById("sok").style.display="block";
-  
-  setTimeout(function(){
-    window.location.href="mailto:primewave.agency1@gmail.com?subject="+encodeURIComponent(subject)+"&body="+body;
-  },800);
+  setTimeout(function(){window.open("https://wa.me/12268556194?text="+encodeURIComponent(msg),"_blank");},800);
 }
 
-/* ====== PARALLAX GRID ====== */
+/* ====== PARALLAX ====== */
+(function(){var grid=document.querySelector(".hgrid");if(!grid)return;document.addEventListener("mousemove",function(e){var x=(e.clientX/window.innerWidth-.5)*12;var y=(e.clientY/window.innerHeight-.5)*12;grid.style.transform="translate("+x+"px,"+y+"px)";});})();
+
+/* ====== COUNTDOWN ====== */
 (function(){
-  var grid=document.querySelector(".hgrid");
-  if(!grid)return;
-  document.addEventListener("mousemove",function(e){
-    var x=(e.clientX/window.innerWidth-.5)*12;
-    var y=(e.clientY/window.innerHeight-.5)*12;
-    grid.style.transform="translate("+x+"px,"+y+"px)";
-  });
-})();
-</script>
-  <!-- PROMO BANNER + COUNTDOWN + SOCIAL PROOF -->
-<style>
-#promo-banner{position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#1A4DD6,#C9A96E);padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-#promo-banner p{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin:0}
-#promo-banner strong{color:#fff;font-size:14px}
-.countdown-wrap{display:flex;align-items:center;gap:8px}
-.cd-block{background:rgba(0,0,0,.25);border-radius:4px;padding:4px 10px;text-align:center;min-width:44px}
-.cd-num{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;color:#fff;line-height:1}
-.cd-lbl{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7)}
-.cd-sep{font-size:18px;font-weight:700;color:rgba(255,255,255,.6)}
-#promo-close{background:none;border:none;color:rgba(255,255,255,.7);font-size:18px;cursor:pointer;padding:0 0 0 10px;line-height:1;transition:color .2s}
-#promo-close:hover{color:#fff}
-#sp-popup{position:fixed;bottom:24px;left:24px;z-index:9998;background:#fff;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.18);padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:300px;transform:translateX(-120%);transition:transform .5s cubic-bezier(.16,1,.3,1);border-left:4px solid #C9A96E}
-#sp-popup.show{transform:translateX(0)}
-.sp-icon{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1A4DD6,#C9A96E);display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
-.sp-text{flex:1}
-.sp-name{font-size:13px;font-weight:600;color:#1A1A2E;margin-bottom:2px}
-.sp-action{font-size:11px;color:#6B6B85}
-.sp-time{font-size:10px;color:#C9A96E;font-weight:600;margin-top:2px}
-</style>
-
-<div id="promo-banner">
- <p>🎁 <strong>FREE WEBSITE AUDIT</strong> (Worth $200) — Limited spots available this month!</p>
-  <div class="countdown-wrap">
-    <div class="cd-block"><div class="cd-num" id="cd-days">15</div><div class="cd-lbl">Days</div></div>
-    <span class="cd-sep">:</span>
-    <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-lbl">Hours</div></div>
-    <span class="cd-sep">:</span>
-    <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-lbl">Mins</div></div>
-    <span class="cd-sep">:</span>
-    <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-lbl">Secs</div></div>
-  </div>
-  <button id="promo-close" onclick="document.getElementById('promo-banner').style.display='none'">&#10005;</button>
-</div>
-
-<div id="sp-popup">
-  <div class="sp-icon" id="sp-icon">J</div>
-  <div class="sp-text">
-    <div class="sp-name" id="sp-name">James from Toronto</div>
-    <div class="sp-action" id="sp-action">just claimed their 10% discount</div>
-    <div class="sp-time">Just now</div>
-  </div>
-</div>
-
-<script>
-(function(){
-  var stored=localStorage.getItem("pw_promo_end");
+  var stored=localStorage.getItem("pw_promo_end2");
   var endTime;
-  if(stored){
-    endTime=parseInt(stored);
-  } else {
-    endTime=Date.now()+(15*24*60*60*1000);
-    localStorage.setItem("pw_promo_end",endTime);
-  }
+  if(stored){endTime=parseInt(stored);}
+  else{endTime=Date.now()+(15*24*60*60*1000);localStorage.setItem("pw_promo_end2",endTime);}
   function updateCountdown(){
-    var now=Date.now();
-    var diff=endTime-now;
-    if(diff<=0){
-      document.getElementById("promo-banner").style.display="none";
-      return;
-    }
+    var now=Date.now();var diff=endTime-now;
+    if(diff<=0){document.getElementById("promo-banner").style.display="none";return;}
     var days=Math.floor(diff/(1000*60*60*24));
     var hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
     var mins=Math.floor((diff%(1000*60*60))/(1000*60));
@@ -1159,101 +993,45 @@ function sendForm(){
     document.getElementById("cd-mins").textContent=String(mins).padStart(2,"0");
     document.getElementById("cd-secs").textContent=String(secs).padStart(2,"0");
   }
-  updateCountdown();
-  setInterval(updateCountdown,1000);
+  updateCountdown();setInterval(updateCountdown,1000);
 })();
 
+/* ====== SOCIAL PROOF POPUP ====== */
 (function(){
   var notifications=[
-    {name:"James",location:"Toronto",action:"just claimed their 10% discount"},
-    {name:"Sarah",location:"Vancouver",action:"is viewing Web Design packages"},
-    {name:"Michael",location:"New York",action:"just claimed their 10% discount"},
-    {name:"Emma",location:"London",action:"is viewing SEO services"},
-    {name:"David",location:"Calgary",action:"just claimed their 10% discount"},
+    {name:"James",location:"Toronto",action:"just requested a free website audit"},
+    {name:"Sarah",location:"Vancouver",action:"is viewing our Web Design packages"},
+    {name:"Michael",location:"New York",action:"just requested a free proposal"},
+    {name:"Emma",location:"London",action:"is viewing our SEO services"},
+    {name:"David",location:"Calgary",action:"just claimed a free website audit"},
     {name:"Olivia",location:"Montreal",action:"just requested a free proposal"},
-    {name:"Chris",location:"Ottawa",action:"just claimed their 10% discount"},
-    {name:"Sophia",location:"Melbourne",action:"is viewing E-Commerce packages"},
-    {name:"Daniel",location:"Dubai",action:"just claimed their 10% discount"},
-    {name:"Ava",location:"Toronto",action:"just requested a free proposal"},
-    {name:"Lucas",location:"Chicago",action:"is viewing Web Design packages"},
-    {name:"Mia",location:"Edmonton",action:"just claimed their 10% discount"}
+    {name:"Chris",location:"Ottawa",action:"just claimed a free website audit"},
+    {name:"Sophia",location:"Melbourne",action:"is viewing our E-Commerce packages"},
+    {name:"Daniel",location:"Dubai",action:"just requested a free proposal"},
+    {name:"Ava",location:"Toronto",action:"just claimed a free website audit"},
+    {name:"Lucas",location:"Chicago",action:"is viewing our Web Design packages"},
+    {name:"Mia",location:"Edmonton",action:"just claimed a free website audit"}
   ];
-  var idx=0;
-  var popup=document.getElementById("sp-popup");
+  var idx=0;var popup=document.getElementById("sp-popup");
   function showNext(){
     var n=notifications[idx%notifications.length];
-    var initial=n.name.charAt(0).toUpperCase();
-    document.getElementById("sp-icon").textContent=initial;
+    document.getElementById("sp-icon").textContent=n.name.charAt(0).toUpperCase();
     document.getElementById("sp-name").textContent=n.name+" from "+n.location;
     document.getElementById("sp-action").textContent=n.action;
     popup.classList.add("show");
-   setTimeout(function(){popup.classList.remove("show");},4000);
+    setTimeout(function(){popup.classList.remove("show");},4500);
     idx++;
   }
-  setTimeout(function(){
-    showNext();
-    setInterval(showNext,30000);
-  },3000);
+  setTimeout(function(){showNext();setInterval(showNext,30000);},3000);
 })();
-</script>
 
-<!-- EXIT INTENT POPUP -->
-<style>
-#exit-overlay{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
-#exit-overlay.show{opacity:1;pointer-events:all}
-#exit-popup{background:linear-gradient(160deg,#0c0c1a 0%,#111827 100%);border:1px solid rgba(201,169,110,.3);border-radius:12px;padding:48px 40px;max-width:480px;width:90%;text-align:center;position:relative;transform:translateY(30px);transition:transform .4s cubic-bezier(.16,1,.3,1)}
-#exit-overlay.show #exit-popup{transform:translateY(0)}
-#exit-popup::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:12px 12px 0 0}
-.ep-icon{font-size:48px;margin-bottom:16px}
-.ep-title{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:12px}
-.ep-title em{font-style:italic;color:var(--gold)}
-.ep-sub{font-size:14px;color:rgba(200,196,190,.75);line-height:1.8;margin-bottom:10px}
-.ep-offer{display:inline-block;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.3);border-radius:6px;padding:10px 24px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;margin-bottom:28px}
-.ep-btns{display:flex;flex-direction:column;gap:12px;align-items:center}
-.ep-wa{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#25D366,#128C7E);border:none;border-radius:6px;color:#fff;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:16px 32px;width:100%;justify-content:center;text-decoration:none;transition:transform .25s,box-shadow .3s;cursor:pointer}
-.ep-wa:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.35)}
-.ep-close{background:none;border:none;color:rgba(200,196,190,.5);font-size:13px;cursor:pointer;transition:color .2s;text-decoration:underline}
-.ep-close:hover{color:#fff}
-#exit-popup .ep-x{position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(200,196,190,.4);font-size:20px;cursor:pointer;transition:color .2s;line-height:1}
-#exit-popup .ep-x:hover{color:#fff}
-</style>
-
-<div id="exit-overlay">
-  <div id="exit-popup">
-    <button class="ep-x" onclick="closeExit()">&#10005;</button>
-    <div class="ep-icon">👋</div>
-    <div class="ep-title">Wait! Before You <em>Leave...</em></div>
-<p class="ep-sub">Get a FREE Website Performance Audit (Worth $200). We'll analyze your site's speed, SEO, and conversion opportunities — delivered within 24 hours.</p>
-<div class="ep-offer">🎁 FREE $200 Audit — No Credit Card Required</div>
-    <div class="ep-btns">
-      <a href="mailto:primewave.agency1@gmail.com?subject=Free Website Audit Request&body=Hi Prime Wave,%0D%0A%0D%0AI'd like to request a free website audit.%0D%0A%0D%0AMy website URL: %0D%0AMy email: %0D%0A%0D%0AThank you!" class="ep-wa" style="background:linear-gradient(135deg,var(--blue),#2057E0)">
-  📧 Get My Free Audit via Email
-</a>
-      <button class="ep-close" onclick="closeExit()">No thanks, I'll pass on this opportunity</button>
-    </div>
-  </div>
-</div>
-
-<script>
+/* ====== EXIT INTENT ====== */
 (function(){
   var shown=false;
-  function showExit(){
-    if(shown)return;
-    shown=true;
-    document.getElementById("exit-overlay").classList.add("show");
-  }
-  function closeExit(){
-    document.getElementById("exit-overlay").classList.remove("show");
-  }
-  window.closeExit=closeExit;
-  document.addEventListener("mouseleave",function(e){
-    if(e.clientY<=0){showExit();}
-  });
-  window.addEventListener("beforeunload",function(){
-    showExit();
-  });
+  function showExit(){if(shown)return;shown=true;document.getElementById("exit-overlay").classList.add("show");}
+  window.closeExit=function(){document.getElementById("exit-overlay").classList.remove("show");};
+  document.addEventListener("mouseleave",function(e){if(e.clientY<=0){showExit();}});
 })();
 </script>
-
 </body>
 </html>
