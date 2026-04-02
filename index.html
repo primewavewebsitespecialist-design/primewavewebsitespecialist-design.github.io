@@ -431,8 +431,14 @@ footer{background:linear-gradient(180deg,#06060E 0%,#030308 100%);border-top:1px
   #nav{top:50px}
   #hero{padding-top:125px}
 }
+  .sticky-call{position:fixed;bottom:20px;right:20px;z-index:9997;background:linear-gradient(135deg,#1A4DD6,#2057E0);border:none;border-radius:50px;padding:14px 24px;display:none;align-items:center;gap:10px;color:#fff;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 6px 20px rgba(26,77,214,.4);transition:transform .3s,box-shadow .3s}
+.sticky-call:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(26,77,214,.6)}
+@media(max-width:900px){.sticky-call{display:flex}}
 </style>
 </head>
+  <a href="tel:+12268556194" class="sticky-call">
+  📞 Call Now
+</a>
 <body>
 
 <div class="cursor-glow" id="cursorGlow"></div>
